@@ -26,24 +26,28 @@ contract modIfier{
         d = _d;
     }
 
-    function getterA() public view returns(uint){
+    function getter() public view onlyOwner returns(uint){
 
-        return a;
-    }
+        if((a > b) && (a > c) && (a > d)){
 
-    function getterB() public view returns(uint){
-        
-        return b;
-    }
+            return a;
+        }
 
-    function getterC() public view returns(uint){
+        if((b > a) && (b > c) && (b > d)){
+            
+            return b;
+        }
 
-        return c;
-    }
+        if((c > a) && (c > b) && (c > d)){
 
-    function getterD() public view returns(uint){
+            return c;
+        }
 
-        return d;
+        if((d > a) && (d > b) && (d > c)){
+
+            return d;
+        }
+
     }
 
 }
